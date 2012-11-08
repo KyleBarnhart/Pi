@@ -24,21 +24,21 @@ int main(int argc, char* argv[])
       exit(0);
    }
 
-   unsigned long points = strtoul(argv[1], NULL, 0);
-   unsigned long pointsInCircle = 0;
+   unsigned iterations = strtoul(argv[1], NULL, 0);
+   unsigned insideCircleCount = 0;
    
    double p1, p2;
 
-   for(unsigned long long i = 0; i < points; i++)
+   for(unsigned i = 0; i < iterations; i++)
    {
       p1 = moreRandom(4);
       p2 = moreRandom(4);
       
       if(p1 * p1 + p2 * p2 <= 1)
-         pointsInCircle++;
+         insideCircleCount++;
    }
 
-   cout << "PI: " << setprecision (15) << 4.0 * (double)pointsInCircle / (double)points << "\n";
+   cout << "PI: " << setprecision (15) << 4.0 * (double)insideCircleCount / (double)iterations << "\n";
    
    return 0;
 }
